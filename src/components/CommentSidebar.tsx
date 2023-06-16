@@ -1,4 +1,4 @@
-import React, { Fragment} from 'react'
+import React, { Fragment } from 'react'
 import { Transition, Dialog } from '@headlessui/react'
 import { HiXMark } from 'react-icons/hi2'
 import Comment from './Comment'
@@ -116,7 +116,8 @@ const CommentSidebar = ({
                   <div className='flex flex-col items-center justify-center space-y-6'>
                     {/* Comments */}
                     {getComments.isSuccess &&
-                      getComments.data.map((comment) => (
+                      getComments.data &&
+                      getComments.data?.map((comment) => (
                         <Comment {...comment} key={comment.id} />
                       ))}
                   </div>

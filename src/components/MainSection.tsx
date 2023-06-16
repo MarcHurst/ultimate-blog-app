@@ -7,7 +7,7 @@ import Post from './Post'
 
 const MainSection = () => {
   const getPosts = trpc.post.getPosts.useQuery()
-  // const getTags = trpc.tag.getUserTags.useQuery()
+  const getTags = trpc.tag.getUserTags.useQuery()
 
   return (
     <main className='col-span-8 border-r border-gray-300 px-24'>
@@ -30,15 +30,15 @@ const MainSection = () => {
           </label>
           <div className='flex w-full items-center justify-end space-x-4'>
             <div className='flex items-center space-x-2'>
-              {/* {getTags.isSuccess && */}
-              {/*   getTags.data?.map((tag) => ( */}
-              {/*     <div */}
-              {/*       key={tag.id} */}
-              {/*       className='rounded-3xl bg-gray-200/50 px-4 py-3' */}
-              {/*     > */}
-              {/*       tag {tag.name} */}
-              {/*     </div> */}
-              {/*   ))} */}
+              {getTags.isSuccess &&
+                getTags.data?.map((tag) => (
+                  <div
+                    key={tag.id}
+                    className='rounded-3xl bg-gray-200/50 px-4 py-3'
+                  >
+                    tag {tag.name}
+                  </div>
+                ))}
             </div>
           </div>
         </div>
@@ -57,6 +57,7 @@ const MainSection = () => {
       <div className='flex w-full flex-col justify-center space-y-8'>
         {getPosts.isLoading && <LoadingSpinner />}
         {getPosts.isSuccess &&
+          getPosts.data &&
           getPosts.data?.map((post) => <Post {...post} key={post.id} />)}
       </div>
     </main>

@@ -22,9 +22,10 @@ const tagPage = () => {
           <div>
             Posts:{' '}
             <div>
-              {getTag.data.posts.map((post) => (
-                <Post key={post.id} {...post} />
-              ))}
+              {getTag.data.posts &&
+                getTag.data?.posts?.map((post) => (
+                  <Post key={post.id} {...post} />
+                ))}
             </div>
           </div>
         </div>
