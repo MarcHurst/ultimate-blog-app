@@ -1,3 +1,4 @@
+import { Tag } from '@prisma/client'
 import { TRPCError } from '@trpc/server'
 import slugify from 'slugify'
 import { z } from 'zod'
@@ -86,8 +87,6 @@ export const tagRouter = router({
       })
     }),
 
-  getPostsWithTag: protectedProcedure.input(z.object({})).query(),
-
   getUserTags: protectedProcedure.query(
     async ({ ctx: { prisma, session } }) => {
       try {
@@ -103,7 +102,7 @@ export const tagRouter = router({
             },
           },
         })
-        const tagsArr = []
+        const tagsArr: Tag[] = []
         user?.posts.forEach((post) => {
           post.tags.forEach((tag) => {
             tagsArr.push(tag)
