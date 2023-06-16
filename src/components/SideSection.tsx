@@ -24,7 +24,8 @@ const SideSection = () => {
       <div>
         <h3 className='my-6 text-lg font-semibold'>Your reading list</h3>
         <div className='flex flex-col space-y-8'>
-          {readingList.data &&
+          {readingList.isSuccess &&
+            readingList.data &&
             readingList.data?.map((bookmark) => (
               <Bookmark {...bookmark} key={bookmark.id} />
             ))}

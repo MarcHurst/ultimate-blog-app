@@ -4,7 +4,7 @@ import slugify from 'slugify'
 import { z } from 'zod'
 
 import { tagCreateSchema } from '../../../components/TagForm'
-import { router, protectedProcedure } from '../trpc'
+import { router, protectedProcedure, publicProcedure } from '../trpc'
 
 export const tagRouter = router({
   createTag: protectedProcedure
@@ -37,7 +37,7 @@ export const tagRouter = router({
     return await prisma.tag.findMany()
   }),
 
-  getTag: protectedProcedure
+  getTag: publicProcedure
     .input(
       z.object({
         name: z.string(),
