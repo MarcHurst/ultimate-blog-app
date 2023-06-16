@@ -12,7 +12,12 @@ type UnsplashGalleryProps = {
   slug: string
 }
 
-const UnsplashGallery = () => {
+const UnsplashGallery = ({
+  isUnsplashModalOpen,
+  setIsUnsplashModalOpen,
+  postId,
+  slug,
+}: UnsplashGalleryProps) => {
   return <div>UnsplashGallery</div>
 }
 

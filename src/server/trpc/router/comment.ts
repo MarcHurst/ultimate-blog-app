@@ -1,6 +1,5 @@
 import { z } from 'zod'
-import { router, protectedProcedure, publicProcedure } from '../trpc'
-import { commentFormSchema } from '../../../components/CommentSidebar'
+import { router, protectedProcedure } from '../trpc'
 
 export const commentRouter = router({
   createComment: protectedProcedure

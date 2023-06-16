@@ -1,6 +1,5 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment} from 'react'
 import { Transition, Dialog } from '@headlessui/react'
-import LoadingSpinner from './LoadingSpinner'
 import { HiXMark } from 'react-icons/hi2'
 import Comment from './Comment'
 import { trpc } from '../utils/trpc'

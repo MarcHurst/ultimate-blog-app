@@ -36,7 +36,7 @@ const WriteFormModal = () => {
     handleSubmit,
     reset,
     formState: { errors },
-    control,
+    // control,
   } = useForm<WriteFormType>({
     resolver: zodResolver(writeFormSchema),
   })

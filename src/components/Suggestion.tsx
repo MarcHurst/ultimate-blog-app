@@ -11,7 +11,7 @@ const Suggestion = ({ ...suggestion }) => {
       <div>
         <button
           className='flex items-center space-x-3 rounded border border-gray-400/50 px-4 py-2 transition hover:border-gray-900 hover:text-gray-900'
-          onClick={() => {}}
+          onClick={() => console.log('Suggestion button clicked')}
         >
           Follow
         </button>

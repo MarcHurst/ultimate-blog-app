@@ -1,6 +1,5 @@
-import React, { useCallback, useState } from 'react'
+import React, { useState } from 'react'
 import dayjs from 'dayjs'
-import Image from 'next/image'
 import Link from 'next/link'
 import { CiBookmarkPlus, CiBookmarkCheck } from 'react-icons/ci'
 
