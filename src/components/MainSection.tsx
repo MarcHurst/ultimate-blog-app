@@ -57,7 +57,7 @@ const MainSection = () => {
       <div className='flex w-full flex-col justify-center space-y-8'>
         {getPosts.isLoading && <LoadingSpinner />}
         {getPosts.isSuccess &&
-          getPosts.data.map((post) => <Post {...post} key={post.id} />)}
+          getPosts.data?.map((post) => <Post {...post} key={post.id} />)}
       </div>
     </main>
   )
