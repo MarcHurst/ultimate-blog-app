@@ -1,4 +1,20 @@
 /** @type {import("prettier").Config} */
 module.exports = {
-  plugins: [require.resolve("prettier-plugin-tailwindcss")],
-};
+  plugins: [require.resolve('prettier-plugin-tailwindcss')],
+  trailingComma: 'es5',
+  tabWidth: 2,
+  semi: false,
+  singleQuote: true,
+  tsxSingleQuote: true,
+  jsxSingleQuote: true,
+  printWidth: 80,
+  insert_final_newline: true,
+  bracketSpacing: true,
+  bracketSameLine: false,
+  arrowParens: 'always',
+  endOfLine: 'lf',
+  embeddedLanguageFormatting: 'auto',
+  htmlWhitespaceSensitivity: 'css',
+  // proseWrap: "always",
+  // proseWrap: "preserve",
+}
