@@ -30,13 +30,14 @@ const MainSection = () => {
           </label>
           <div className='flex w-full items-center justify-end space-x-4'>
             <div className='flex items-center space-x-2'>
-              {getTags.isSuccess &&
-                getTags.data?.map((tag) => (
+              {Array
+                .from({length: 4})
+                .map((_, i) => (
                   <div
-                    key={tag.id}
+                    key={i}
                     className='rounded-3xl bg-gray-200/50 px-4 py-3'
                   >
-                    tag {tag.name}
+                    tag {i}
                   </div>
                 ))}
             </div>
