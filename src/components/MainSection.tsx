@@ -59,6 +59,7 @@ const MainSection = () => {
         {getPosts.isLoading && <LoadingSpinner />}
         {getPosts.isSuccess &&
           getPosts.data &&
+          getPosts.data?.length > 0 &&
           getPosts.data?.map((post) => <Post {...post} key={post.id} />)}
       </div>
     </main>

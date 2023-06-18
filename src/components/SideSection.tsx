@@ -26,6 +26,7 @@ const SideSection = () => {
         <div className='flex flex-col space-y-8'>
           {readingList.isSuccess &&
             readingList.data &&
+            readingList.data?.length > 0 &&
             readingList.data?.map((bookmark) => (
               <Bookmark {...bookmark} key={bookmark.id} />
             ))}
